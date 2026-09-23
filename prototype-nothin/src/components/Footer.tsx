@@ -35,7 +35,7 @@ export function Footer({ onOpenConsultation }: FooterProps) {
               Нужен результат в сложном деле?
             </h2>
             <p className="font-mono text-xs sm:text-sm text-slate-400 mt-4 max-w-xl font-light leading-relaxed">
-              Обсудите стратегию с профильным партнером бюро. Первичная консультация проходит в режиме строгой адвокатской тайны.
+              Обсудите стратегию напрямую с профильным партнером бюро. Первичная консультация проходит в режиме строгой адвокатской тайны.
             </p>
           </div>
 
@@ -50,53 +50,52 @@ export function Footer({ onOpenConsultation }: FooterProps) {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <a 
-              href="https://t.me/nsplaw" 
+              href="https://t.me/+79687651517" 
               target="_blank" 
               rel="noreferrer"
               className="relative inline-flex items-center justify-center gap-2.5 rounded-full border border-white/20 hover:border-[#5F1358] hover:text-[#5F1358] text-white px-6 py-4 font-mono text-xs font-medium uppercase tracking-wider transition-all duration-300 active:scale-95 cursor-pointer"
               data-cursor="link"
               data-cursor-label="telegram"
             >
-              <span>Telegram @nsplaw</span>
+              <span>Telegram-приемная</span>
               <span className="text-[10px]">↗</span>
             </a>
           </div>
         </div>
 
-        {/* Hubs Grid */}
+        {/* Hubs Grid with Authentic NSP Data */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 py-16 border-b border-white/10 font-mono text-xs">
           <div>
             <div className="text-white font-sans font-bold uppercase tracking-wider mb-2.5 text-sm">Москва (HQ)</div>
             <p className="leading-relaxed text-slate-400 text-xs">
-              Москва-Сити, Башня Федерация Восток<br />
-              45 этаж, Пресненская наб., 12<br />
+              Смоленская площадь, д. 3, эт. 14<br />
+              БЦ «Смоленский Пассаж»<br />
               <a href="tel:+74956468176" className="text-white hover:text-[#5F1358] transition">+7 (495) 646-81-76</a><br />
-              <a href="mailto:info@nsplaw.com" className="text-slate-400 hover:text-white transition">info@nsplaw.com</a>
+              <a href="mailto:welcome@nsplaw.com" className="text-slate-400 hover:text-white transition">welcome@nsplaw.com</a>
             </p>
           </div>
 
           <div>
-            <div className="text-white font-sans font-bold uppercase tracking-wider mb-2.5 text-sm">Ближний Восток</div>
+            <div className="text-white font-sans font-bold uppercase tracking-wider mb-2.5 text-sm">Москва-Сити</div>
             <p className="leading-relaxed text-slate-400 text-xs">
-              DIFC Gate Precinct 4<br />
-              Дубай, Объединенные Арабские Эмираты<br />
-              <a href="mailto:dubai@nsplaw.com" className="text-slate-400 hover:text-white transition">dubai@nsplaw.com</a>
+              Башня Федерация Восток, 45 этаж<br />
+              Пресненская набережная, 12<br />
+              Хаб корпоративных сделок M&A
             </p>
           </div>
 
           <div>
-            <div className="text-white font-sans font-bold uppercase tracking-wider mb-2.5 text-sm">Азия (Гонконг)</div>
+            <div className="text-white font-sans font-bold uppercase tracking-wider mb-2.5 text-sm">Yingke Global Network</div>
             <p className="leading-relaxed text-slate-400 text-xs">
-              Two Exchange Square, Central<br />
-              Гонконг, SAR<br />
-              <a href="mailto:asia@nsplaw.com" className="text-slate-400 hover:text-white transition">asia@nsplaw.com</a>
+              Партнерские офисы в 30+ странах мира:<br />
+              Пекин, Шанхай, Дубай (DIFC), Гонконг, Лондон, Женева
             </p>
           </div>
 
           <div>
             <div className="text-white font-sans font-bold uppercase tracking-wider mb-2.5 text-sm">Адвокатская тайна</div>
             <p className="leading-relaxed text-slate-400 text-[11px]">
-              Деятельность осуществляется на основании Федерального закона «Об адвокатской деятельности и адвокатуре в РФ» 63-ФЗ. Полная конфиденциальность с первого контакта.
+              Адвокатская палата г. Москвы, реестровый номер 77/2-337. Деятельность регулируется Федеральным законом № 63-ФЗ.
             </p>
           </div>
         </div>
@@ -104,14 +103,14 @@ export function Footer({ onOpenConsultation }: FooterProps) {
         {/* Bottom Colophon */}
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] font-mono text-slate-400">
           <div>
-            © 2006—2026 Адвокатское бюро «Некторов, Савельев и Партнеры».
+            © 2006—2026 Адвокатское бюро «Некторов, Савельев и Партнеры» (NSP).
           </div>
           <div className="flex flex-wrap items-center gap-6">
-            <a href="#" className="hover:text-[#5F1358] transition">Политика конфиденциальности</a>
+            <a href="https://nsplaw.com/career" target="_blank" rel="noreferrer" className="hover:text-[#5F1358] transition">Карьера в NSP</a>
             <span className="text-white/20">•</span>
-            <a href="#" className="hover:text-[#5F1358] transition">Условия соглашения</a>
+            <a href="https://t.me/+79687651517" target="_blank" rel="noreferrer" className="hover:text-[#5F1358] transition">Telegram-канал</a>
             <span className="text-white/20">•</span>
-            <a href="https://t.me/nsplaw" target="_blank" rel="noreferrer" className="hover:text-[#5F1358] transition">Аналитический канал в Telegram</a>
+            <a href="https://www.youtube.com/channel/UCuHMA6ZFJtYQpbfNAGPOKTQ" target="_blank" rel="noreferrer" className="hover:text-[#5F1358] transition">Видео-канал</a>
           </div>
         </div>
 

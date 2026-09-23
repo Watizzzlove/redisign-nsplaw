@@ -3,6 +3,7 @@ import { SmoothCursor } from './components/SmoothCursor'
 import { InteractiveHero } from './components/InteractiveHero'
 import { WorksList } from './components/WorksList'
 import { PhilosophySection } from './components/PhilosophySection'
+import { InsightsSection } from './components/InsightsSection'
 import { PeopleRoster } from './components/PeopleRoster'
 import { Footer } from './components/Footer'
 import { ConsultationModal } from './components/ConsultationModal'
@@ -20,6 +21,7 @@ export function App() {
         <InteractiveHero onOpenConsultation={() => setIsModalOpen(true)} />
         <WorksList />
         <PhilosophySection />
+        <InsightsSection />
         <PeopleRoster />
       </main>
 

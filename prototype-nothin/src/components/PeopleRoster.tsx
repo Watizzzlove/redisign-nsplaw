@@ -13,30 +13,37 @@ const partnersList: Partner[] = [
   {
     name: 'Александр Некторов',
     title: 'Управляющий партнер, адвокат',
-    focus: 'Сложные судебные процессы, защита корпоративных активов и санкционный комплаенс',
+    focus: 'Сложные судебные процессы, стратегическая защита корпоративных активов, санкционный комплаенс.',
     email: 'a.nektorov@nsplaw.com',
     telegram: 'nektorov_nsp',
   },
   {
-    name: 'Михаил Савельев',
-    title: 'Партнер, руководитель практики M&A',
-    focus: 'Стратегические слияния и поглощения, реструктуризация крупных холдингов',
-    email: 'm.savelev@nsplaw.com',
-    telegram: 'mikle_sav',
+    name: 'Илья Рачков',
+    title: 'Партнер, адвокат, д.ю.н.',
+    focus: 'Международный коммерческий и инвестиционный арбитраж, споры в ВТО, трансграничные разбирательства.',
+    email: 'i.rachkov@nsplaw.com',
+    telegram: 'rachkov_nsp',
   },
   {
-    name: 'Виктор Прокофьев',
-    title: 'Партнер судебной практики',
-    focus: 'Коммерческий арбитраж, трансграничные и прецедентные споры в высших судах',
-    email: 'v.prokofiev@nsplaw.com',
-    telegram: 'prokofiev_nsp',
+    name: 'Роман Макаров',
+    title: 'Партнер, адвокат, руководитель судебной практики',
+    focus: 'Прецедентные арбитражные процессы в Верховном Суде РФ, субсидиарная ответственность, дела о банкротстве.',
+    email: 'r.makarov@nsplaw.com',
+    telegram: 'makarov_nsp',
   },
   {
-    name: 'Илья Ковалев',
-    title: 'Партнер практики частного капитала',
-    focus: 'Международное структурирование, личные фонды и защита семейных состояний',
-    email: 'i.kovalev@nsplaw.com',
-    telegram: 'kovalev_nsp',
+    name: 'Михаил Халецкий',
+    title: 'Партнер, адвокат, руководитель корпоративной практики и M&A',
+    focus: 'Стратегические сделки слияний и поглощений, реструктуризация холдингов, комплексный Due Diligence.',
+    email: 'm.khaletsky@nsplaw.com',
+    telegram: 'khaletsky_nsp',
+  },
+  {
+    name: 'Арам Григорян',
+    title: 'Партнер, адвокат',
+    focus: 'Санкционное регулирование, разблокировка активов в депозитариях ЕС, трансграничные расчеты.',
+    email: 'a.grigoryan@nsplaw.com',
+    telegram: 'grigoryan_nsp',
   },
 ]
 
@@ -54,11 +61,16 @@ export function PeopleRoster() {
       <div className="max-w-7xl mx-auto">
         
         {/* Large Confident Heading: Single font, single weight, increased size */}
-        <h2 className="font-sans text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0A0A0A] mb-16 sm:mb-20">
-          Партнерский уровень каждого решения.
-        </h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-8">
+          <h2 className="font-sans text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0A0A0A] max-w-4xl leading-[1.04]">
+            Партнерский уровень каждого решения.
+          </h2>
+          <p className="font-mono text-xs sm:text-sm text-slate-600 max-w-xs font-normal leading-relaxed">
+            Команда NSP — это адвокаты с многолетним опытом ведения резонансных дел в высших судебных инстанциях.
+          </p>
+        </div>
 
-        {/* 2-Column Grid of Partners */}
+        {/* Grid of Partners */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10 font-mono">
           {partnersList.map((p) => (
             <div 

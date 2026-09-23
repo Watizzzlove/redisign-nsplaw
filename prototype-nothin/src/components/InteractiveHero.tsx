@@ -141,6 +141,9 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
             <a href="#manifesto" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="подход">
               Подход
             </a>
+            <a href="#insights" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="исследования">
+              Исследования
+            </a>
             <a href="#partners" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="партнеры">
               Партнеры
             </a>
@@ -191,7 +194,7 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
               activeLetter === 'S' ? 'text-[#5F1358] -translate-y-2' : 'hover:text-[#5F1358] hover:-translate-y-2'
             }`}
             data-cursor="explore"
-            data-cursor-label="савельев"
+            data-cursor-label="споры и сделки"
           >
             S
           </div>
@@ -226,10 +229,10 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
 
         {/* Dynamic Minimalist Letter Indicator on Hover / Tap */}
         <div className="min-h-5 font-mono text-[10px] sm:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#5F1358] font-semibold text-center mt-2 transition-all duration-200">
-          {activeLetter === 'N' && '[ Александр Некторов • Управляющий партнер ]'}
-          {activeLetter === 'S' && '[ Михаил Савельев • Партнер, M&A и корпоративное право ]'}
-          {activeLetter === 'P' && '[ Партнеры и адвокаты • С 2006 года ]'}
-          {activeLetter === 'apostrophe' && '[ Бюро основано в 2006 году • Москва-Сити ]'}
+          {activeLetter === 'N' && '[ Александр Некторов • Управляющий партнер, адвокат ]'}
+          {activeLetter === 'S' && '[ Сделки & Споры • Роман Макаров • Илья Рачков, Д.Ю.Н. ]'}
+          {activeLetter === 'P' && '[ Партнеры и адвокаты NSP • Практика с 2006 года ]'}
+          {activeLetter === 'apostrophe' && '[ Адвокатское бюро NSP • Реестр АП г. Москвы № 77/2-337 ]'}
         </div>
       </div>
 
