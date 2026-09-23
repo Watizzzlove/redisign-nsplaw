@@ -1,0 +1,28 @@
+# Environment & Secrets
+.env
+.env.*
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+venv/
+
+# Node
+node_modules/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Private Client Inbox
+client_inbox/
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+Thumbs.db
