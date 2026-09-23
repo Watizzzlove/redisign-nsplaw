@@ -13,40 +13,45 @@ interface Practice {
 const practices: Practice[] = [
   {
     num: '01',
-    title: 'High-Stakes Commercial Litigation',
-    summary: 'Precedential disputes before the Supreme Court of the Russian Federation and international arbitration tribunals (HKIAC, DIAC, ICAC).',
-    metric: '₽280B+ protected',
+    title: 'Сложные судебные и арбитражные споры',
+    summary: 'Прецедентные дела в Верховном Суде РФ и международных арбитражных институтах (HKIAC, DIAC, МКАС). Защита при субсидиарной ответственности.',
+    metric: '₽280+ млрд защищено',
     previewImage: './assets/nsp_hero_femida_concept_1790014641994.jpg',
   },
   {
     num: '02',
-    title: 'Strategic M&A & Private Equity',
-    summary: 'Consolidation of strategic corporate assets, cross-border restructuring, and regulatory clearances with government commissions.',
-    metric: '120+ transactions',
+    title: 'Стратегический M&A и корпоративное право',
+    summary: 'Консолидация стратегических активов, структурирование трансграничных холдингов, согласование сделок в правительственных комиссиях.',
+    metric: '120+ сделок',
     previewImage: './assets/nsp_ui_homepage_concept_1790014661753.jpg',
   },
   {
     num: '03',
-    title: 'Sanctions Relief & Asset Liberation',
-    summary: 'Unblocking foreign asset accounts in European depositories (Euroclear, Clearstream) and delisting defense before OFAC and EU bodies.',
-    metric: '98% unblocked',
+    title: 'Санкционный комплаенс и разблокировка активов',
+    summary: 'Разблокировка активов в европейских депозитариях (Euroclear, Clearstream) и юридическая защита интересов доверителей в иностранных юрисдикциях.',
+    metric: '98% разблокировано',
     previewImage: './assets/nsp_hero_femida_concept_1790014641994.jpg',
   },
   {
     num: '04',
-    title: 'Private Capital & Personal Foundations',
-    summary: 'Succession architectures, defense of family wealth against predatory claims, and personal foundations (личные фонды).',
-    metric: 'Confidential',
+    title: 'Защита частного капитала и личные фонды',
+    summary: 'Архитектура преемственности, структурирование личных фондов и комплексная защита семейных активов от недружественных поглощений.',
+    metric: 'Конфиденциально',
     previewImage: './assets/nsp_ui_homepage_concept_1790014661753.jpg',
   },
 ]
 
 export function WorksList() {
   const [hoveredPractice, setHoveredPractice] = useState<Practice | null>(null)
+  const [activePracticeMobile, setActivePracticeMobile] = useState<string | null>(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
   const handleMouseMove = (e: React.MouseEvent) => {
     setMousePos({ x: e.clientX, y: e.clientY })
+  }
+
+  const handleRowClick = (num: string) => {
+    setActivePracticeMobile((prev) => (prev === num ? null : num))
   }
 
   return (
@@ -55,7 +60,7 @@ export function WorksList() {
       onMouseMove={handleMouseMove}
       className="relative w-full bg-white border-t border-hairline py-24 sm:py-32 px-6 sm:px-12 md:px-16"
     >
-      {/* Floating Hover Vignette (Signature noth.in interaction) */}
+      {/* Floating Hover Vignette (Desktop) */}
       <AnimatePresence>
         {hoveredPractice && (
           <motion.div
@@ -86,56 +91,88 @@ export function WorksList() {
 
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Category Lettering in noth.in spaced style */}
-        <div className="font-mono text-xs uppercase tracking-[0.25em] text-[#5F1358] mb-8 font-semibold">
-          ( 01 ) PRACTICES
-        </div>
-
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
-          <h2 className="font-sans text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A0A0A] max-w-2xl leading-[1.05]">
-            Good firms recite laws.<br />
-            <span className="font-light text-slate-500 italic">Great firms win precedents.</span>
+        {/* Unified, Bold Headline: Single font, single weight, increased size, no italics */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 sm:mb-20 gap-8">
+          <h2 className="font-sans text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0A0A0A] max-w-4xl leading-[1.04]">
+            Обычные фирмы цитируют законы.<br />
+            Сильные — создают прецеденты.
           </h2>
-          <p className="font-mono text-xs text-slate-600 max-w-xs font-normal leading-relaxed">
-            We focus exclusively on complex legal mandates where conventional template approaches collapse.
+          <p className="font-mono text-xs sm:text-sm text-slate-600 max-w-xs font-normal leading-relaxed">
+            Берёмся за комплексные судебные споры и сделки, где стандартные шаблонные схемы бессильны.
           </p>
         </div>
 
         {/* Minimalist Brutalist Table Rows */}
         <div className="border-t border-hairline divide-y divide-hairline">
-          {practices.map((item) => (
-            <div
-              key={item.num}
-              onMouseEnter={() => setHoveredPractice(item)}
-              onMouseLeave={() => setHoveredPractice(null)}
-              className="py-10 sm:py-12 group flex flex-col lg:flex-row lg:items-center justify-between gap-6 transition-colors duration-300 hover:bg-slate-50/60 px-4 -mx-4 rounded-xl cursor-pointer"
-              data-cursor="explore"
-              data-cursor-label={`view ${item.num}`}
-            >
-              <div className="flex items-baseline gap-8 sm:gap-14">
-                <span className="font-mono text-xs sm:text-sm text-slate-400 group-hover:text-[#5F1358] transition-colors font-medium">
-                  {item.num}
-                </span>
-                <div>
-                  <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A0A0A] group-hover:text-[#5F1358] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="font-mono text-xs text-slate-500 mt-2.5 max-w-2xl font-light leading-relaxed">
-                    {item.summary}
-                  </p>
-                </div>
-              </div>
+          {practices.map((item) => {
+            const isSelected = activePracticeMobile === item.num
+            return (
+              <div
+                key={item.num}
+                onClick={() => handleRowClick(item.num)}
+                onMouseEnter={() => setHoveredPractice(item)}
+                onMouseLeave={() => setHoveredPractice(null)}
+                className={`py-8 sm:py-12 group transition-all duration-300 px-4 -mx-4 rounded-xl cursor-pointer ${
+                  isSelected ? 'bg-slate-50' : 'hover:bg-slate-50/70 active:bg-slate-100'
+                }`}
+                data-cursor="explore"
+                data-cursor-label={`кейс ${item.num}`}
+              >
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                  <div className="flex items-baseline gap-6 sm:gap-14">
+                    <span className="font-mono text-xs sm:text-sm text-slate-400 group-hover:text-[#5F1358] transition-colors font-medium">
+                      {item.num}
+                    </span>
+                    <div>
+                      <h3 className="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A0A0A] group-hover:text-[#5F1358] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="font-mono text-xs text-slate-500 mt-2 max-w-2xl font-light leading-relaxed">
+                        {item.summary}
+                      </p>
+                    </div>
+                  </div>
 
-              <div className="flex items-center gap-6 self-start lg:self-center font-mono text-xs">
-                <span className="text-[#0A0A0A] font-semibold tracking-wide">
-                  {item.metric}
-                </span>
-                <div className="w-9 h-9 rounded-full border border-black/15 flex items-center justify-center text-slate-700 group-hover:border-[#5F1358] group-hover:bg-[#5F1358] group-hover:text-white transition duration-300">
-                  <ArrowUpRight className="w-4 h-4" />
+                  <div className="flex items-center gap-5 self-start lg:self-center font-mono text-xs">
+                    <span className="text-[#0A0A0A] font-semibold tracking-wide">
+                      {item.metric}
+                    </span>
+                    <div className={`w-9 h-9 rounded-full border border-black/15 flex items-center justify-center transition duration-300 ${
+                      isSelected 
+                        ? 'border-[#5F1358] bg-[#5F1358] text-white rotate-45' 
+                        : 'text-slate-700 group-hover:border-[#5F1358] group-hover:bg-[#5F1358] group-hover:text-white'
+                    }`}>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </div>
                 </div>
+
+                {/* Mobile Tap Interactive Preview */}
+                <AnimatePresence>
+                  {isSelected && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="lg:hidden mt-5 pt-4 border-t border-black/10 overflow-hidden"
+                    >
+                      <div className="relative h-48 rounded-lg overflow-hidden">
+                        <img 
+                          src={item.previewImage} 
+                          alt={item.title} 
+                          className="w-full h-full object-cover" 
+                        />
+                        <div className="absolute bottom-2.5 left-2.5 bg-[#5F1358] text-white px-3 py-1 rounded-md text-[11px] font-mono font-bold tracking-wider">
+                          {item.metric}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
       </div>

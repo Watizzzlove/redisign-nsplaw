@@ -98,6 +98,10 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
     }
   }, [])
 
+  const handleLetterClick = (letter: string) => {
+    setActiveLetter((prev) => (prev === letter ? null : letter))
+  }
+
   return (
     <section className="relative w-full min-h-screen bg-white text-[#0A0A0A] flex flex-col justify-between p-6 sm:p-10 md:p-12 overflow-hidden select-none">
       
@@ -111,19 +115,19 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
       <header className="relative z-20 flex items-start justify-between w-full">
         
         {/* Top-Left: Punchy Statement + Pill Action Button */}
-        <div className="flex flex-col items-start space-y-3 sm:space-y-4 max-w-[230px] sm:max-w-sm">
+        <div className="flex flex-col items-start space-y-3 sm:space-y-4 max-w-[240px] sm:max-w-sm">
           <p className="font-sans text-[13px] sm:text-[17px] font-semibold tracking-tight text-[#0A0A0A] leading-snug">
-            Not a generic firm, a perspective.<br />
-            Because strategy is everythin’.
+            Не просто юристы, а стратегический перевес.<br />
+            Потому что результат решает всё.
           </p>
 
           <button 
             onClick={onOpenConsultation}
-            className="btn-nothin mt-1 group"
+            className="btn-nothin mt-1 group active:scale-95 transition-transform"
             data-cursor="action"
-            data-cursor-label="book a call"
+            data-cursor-label="обсудить"
           >
-            <span>Book a call</span>
+            <span>Обсудить задачу</span>
             <ArrowRight className="w-3.5 h-3.5 arrow-icon group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
@@ -131,22 +135,22 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
         {/* Top-Right: Brutalist Vertical Navigation + Dot Grid Icon */}
         <div className="flex items-start gap-4 text-right">
           <nav className="hidden sm:flex flex-col space-y-1 font-mono text-[11px] sm:text-[12px] font-semibold uppercase tracking-wider text-[#0A0A0A]">
-            <a href="#practices" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="works">
-              Practices
+            <a href="#practices" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="практики">
+              Практики
             </a>
-            <a href="#manifesto" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="studio">
-              Perspective
+            <a href="#manifesto" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="подход">
+              Подход
             </a>
-            <a href="#partners" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="people">
-              Partners
+            <a href="#partners" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="партнеры">
+              Партнеры
             </a>
-            <a href="#contact" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="contact">
-              Contact
+            <a href="#contact" className="hover:text-[#5F1358] transition py-0.5" data-cursor="link" data-cursor-label="контакты">
+              Контакты
             </a>
           </nav>
 
           {/* noth.in 4-dot menu icon */}
-          <div className="pt-1 flex flex-col gap-1 cursor-pointer" onClick={onOpenConsultation}>
+          <div className="pt-1 flex flex-col gap-1 cursor-pointer active:scale-90 transition-transform" onClick={onOpenConsultation}>
             <div className="flex gap-1">
               <span className="w-1.5 h-1.5 bg-[#0A0A0A] rounded-xs" />
               <span className="w-1.5 h-1.5 bg-[#0A0A0A] rounded-xs" />
@@ -166,53 +170,66 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
           
           {/* Letter N */}
           <div 
+            onClick={() => handleLetterClick('N')}
             onMouseEnter={() => setActiveLetter('N')}
             onMouseLeave={() => setActiveLetter(null)}
-            className="flex-1 text-[21vw] sm:text-[24vw] md:text-[26vw] transition-all duration-300 transform hover:text-[#5F1358] hover:-translate-y-2 cursor-pointer"
+            className={`flex-1 text-[21vw] sm:text-[24vw] md:text-[26vw] transition-all duration-300 transform cursor-pointer active:scale-95 ${
+              activeLetter === 'N' ? 'text-[#5F1358] -translate-y-2' : 'hover:text-[#5F1358] hover:-translate-y-2'
+            }`}
             data-cursor="explore"
-            data-cursor-label="nektorov"
+            data-cursor-label="некторов"
           >
             N
           </div>
 
           {/* Letter S */}
           <div 
+            onClick={() => handleLetterClick('S')}
             onMouseEnter={() => setActiveLetter('S')}
             onMouseLeave={() => setActiveLetter(null)}
-            className="flex-1 text-[21vw] sm:text-[24vw] md:text-[26vw] transition-all duration-300 transform hover:text-[#5F1358] hover:-translate-y-2 cursor-pointer"
+            className={`flex-1 text-[21vw] sm:text-[24vw] md:text-[26vw] transition-all duration-300 transform cursor-pointer active:scale-95 ${
+              activeLetter === 'S' ? 'text-[#5F1358] -translate-y-2' : 'hover:text-[#5F1358] hover:-translate-y-2'
+            }`}
             data-cursor="explore"
-            data-cursor-label="saveliev"
+            data-cursor-label="савельев"
           >
             S
           </div>
 
           {/* Letter P */}
           <div 
+            onClick={() => handleLetterClick('P')}
             onMouseEnter={() => setActiveLetter('P')}
             onMouseLeave={() => setActiveLetter(null)}
-            className="flex-1 text-[21vw] sm:text-[24vw] md:text-[26vw] transition-all duration-300 transform hover:text-[#5F1358] hover:-translate-y-2 cursor-pointer"
+            className={`flex-1 text-[21vw] sm:text-[24vw] md:text-[26vw] transition-all duration-300 transform cursor-pointer active:scale-95 ${
+              activeLetter === 'P' ? 'text-[#5F1358] -translate-y-2' : 'hover:text-[#5F1358] hover:-translate-y-2'
+            }`}
             data-cursor="explore"
-            data-cursor-label="partners"
+            data-cursor-label="партнеры"
           >
             P
           </div>
 
           {/* Apostrophe ’ in noth.in signature style */}
           <div 
-            className="text-[14vw] sm:text-[16vw] font-serif -ml-2 sm:-ml-8 -mt-8 sm:-mt-24 text-[#5F1358] transition-transform duration-300 hover:rotate-12 cursor-pointer flex-shrink-0"
+            onClick={() => handleLetterClick('apostrophe')}
+            className={`text-[14vw] sm:text-[16vw] font-serif -ml-2 sm:-ml-8 -mt-8 sm:-mt-24 text-[#5F1358] transition-transform duration-300 hover:rotate-12 cursor-pointer flex-shrink-0 active:scale-90 ${
+              activeLetter === 'apostrophe' ? 'rotate-12 scale-110' : ''
+            }`}
             data-cursor="action"
-            data-cursor-label="est 2006"
+            data-cursor-label="с 2006"
           >
             ’
           </div>
 
         </div>
 
-        {/* Dynamic Minimalist Letter Indicator on Hover */}
-        <div className="h-5 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#5F1358] font-semibold text-center mt-2 transition-all duration-200">
-          {activeLetter === 'N' && '[ Alexander Nektorov • Managing Partner ]'}
-          {activeLetter === 'S' && '[ Mikhail Saveliev • M&A & Corporate Partner ]'}
-          {activeLetter === 'P' && '[ Partners & Advocates • Est. 2006 ]'}
+        {/* Dynamic Minimalist Letter Indicator on Hover / Tap */}
+        <div className="min-h-5 font-mono text-[10px] sm:text-[12px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#5F1358] font-semibold text-center mt-2 transition-all duration-200">
+          {activeLetter === 'N' && '[ Александр Некторов • Управляющий партнер ]'}
+          {activeLetter === 'S' && '[ Михаил Савельев • Партнер, M&A и корпоративное право ]'}
+          {activeLetter === 'P' && '[ Партнеры и адвокаты • С 2006 года ]'}
+          {activeLetter === 'apostrophe' && '[ Бюро основано в 2006 году • Москва-Сити ]'}
         </div>
       </div>
 
@@ -221,10 +238,10 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
         
         {/* Bottom Left: Location */}
         <div>
-          Advocate Bureau in Moscow & Global Hubs
+          Адвокатское бюро в Москве и глобальных хабах
         </div>
 
-        {/* Bottom Right: Links + Language Badge */}
+        {/* Bottom Right: Links */}
         <div className="flex items-center gap-3 sm:gap-4">
           <a 
             href="https://t.me/nsplaw" 
@@ -238,19 +255,17 @@ export function InteractiveHero({ onOpenConsultation }: HeroProps) {
           </a>
           <span className="text-black/30">/</span>
           <a 
-            href="#partners" 
+            href="#manifesto" 
             className="hover:text-[#5F1358] uppercase tracking-wider transition"
             data-cursor="link"
-            data-cursor-label="team"
+            data-cursor-label="аналитика"
           >
-            Insights
+            Аналитика
           </a>
           <span className="text-black/30">/</span>
-          
-          {/* Language Pill */}
-          <div className="px-2.5 py-0.5 rounded-full bg-[#0A0A0A] text-white font-mono text-[10px] font-bold tracking-wider">
-            RU
-          </div>
+          <span className="text-slate-500 uppercase tracking-wider">
+            Москва, Сити
+          </span>
         </div>
 
       </footer>
